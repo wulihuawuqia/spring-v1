@@ -1,5 +1,6 @@
 package v1;
 
+import com.dn.spring.beans.PreBuildBeanFactory;
 import org.junit.AfterClass;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class DefaultBeanFactoryTest {
 
-	static DefaultBeanFactory bf = new DefaultBeanFactory();
+	static DefaultBeanFactory bf = new PreBuildBeanFactory();
 
 	@Test
 	public void testRegist() throws Exception {

@@ -2,6 +2,10 @@ package com.dn.spring.beans;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.util.List;
+
 public interface BeanDefinition {
 
     String SCOPE_SINGLETION = "singleton";
@@ -66,5 +70,29 @@ public interface BeanDefinition {
 
         return true;
     }
+
+    /**
+     * 获得构造参数定义 <br>
+     * add in V2
+     */
+    List<?> getConstructorArgumentValues();
+
+    /**
+     * 属性依赖<br>
+     * add in V2
+     *
+     * @return
+     */
+    List<PropertyValue> getPropertyValues();
+
+    /* 下面的四个方法是供beanFactory中使用的 */
+
+    public Constructor<?> getConstructor();
+
+    public void setConstructor(Constructor<?> constructor);
+
+    public Method getFactoryMethod();
+
+    public void setFactoryMethod(Method factoryMethod);
 
 }

@@ -2,11 +2,11 @@ package com.dn.spring.samples;
 
 public class ABeanFactory {
 
-	public static ABean getABean() {
-		return new ABean();
+	public static ABean getABean(String name, CBean cb) {
+		return new ABean(name, cb);
 	}
 
-	public ABean getABean2() {
-		return new ABean();
+	public ABean getABean2(String name, CBean cb) {
+		return new ABean(name, cb);
 	}
 }
