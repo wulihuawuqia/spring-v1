@@ -38,6 +38,7 @@ public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry, 
         }
 
         this.beanDefintionMap.put(beanName, beanDefinition);
+        logger.info("【" + beanName + "】 注册成功！");
     }
 
     @Override
